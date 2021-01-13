@@ -1,0 +1,208 @@
+//==========================================================
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: 0.8s ease 0s;
+	opacity: 0;
+	visibility: hidden;
+	background-color: rgba(0, 0, 0, 0.7);
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 100;
+	cursor: pointer;
+	text-align: center;
+	&::before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+	&._active {
+		transition: 0.6s ease 0s;
+		opacity: 1;
+		visibility: visible;
+		.popup__form {
+			transition: all 0.8s ease 0.2s;
+			transform: scale(1);
+		}
+	}
+	// .popup__content
+	&__content {
+		position: relative;
+		margin: 50px auto;
+		display: inline-block;
+		vertical-align: middle;
+		cursor: default;
+	}
+	// .popup__body
+	&__form {
+		transform: scale(0);
+		transition: all 0.6s ease 0s;
+		background-color: #fff;
+		padding: 45px 40px 60px;
+		text-align: center;
+		width: 673px;
+		border: 5px solid #18acff;
+		border-radius: 30px;
+		z-index: 100;
+		&_header {
+			margin-bottom: 30px;
+			position: relative;
+		}
+		&_logo {
+			@media (max-width: 760px) {
+				svg {
+					width: 120px;
+					height: 120px;
+				}
+			}
+		}
+		&_title {
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 29px;
+			@media (max-width: 760px) {
+				font-size: 20px;
+				line-height: 22px;
+			}
+			@media (max-width: 560px) {
+				font-size: 16px;
+				line-height: 18px;
+			}
+		}
+		&_close {
+			position: absolute;
+			top: -10px;
+			right: 0px;
+			cursor: pointer;
+			svg {
+				width: 20px;
+				height: 20px;
+				fill: #212121;
+			}
+			@media (max-width: 560px) {
+				top: -20px;
+				svg {
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
+		&_politic {
+			font-size: 14px;
+			line-height: 20px;
+			color: #5b5b5b;
+			//margin-bottom: 60px;
+			span {
+				display: block;
+				color: #e32020;
+			}
+			@media (max-width: 560px) {
+				font-size: 12px;
+				line-height: 16px;
+			}
+		}
+		.popup-input {
+			max-width: 577px;
+			height: 47px;
+			padding: 13px 22px 12px 22px;
+			font-size: 18px;
+			line-height: 22px;
+			color: rgba(33, 33, 33, 0.5);
+			border: 1px solid #18b6f5;
+			border-radius: 30px;
+			margin-bottom: 18px;
+			&:last-child {
+				margin-bottom: 74px;
+			}
+			@media (max-width: 760px) {
+				font-size: 16px;
+				line-height: 20px;
+			}
+			@media (max-width: 560px) {
+				font-size: 14px;
+				line-height: 16px;
+				padding: 8px 10px;
+				height: auto;
+			}
+		}
+		&_btn {
+			margin: 32px 0 40px;
+			position: relative;
+			font-size: 18px;
+			line-height: 22px;
+			font-weight: 700;
+			padding: 24px 133px 23px 134px;
+			background: linear-gradient(92.01deg, #18ffac 19.16%, #18acff 82.18%);
+			box-shadow: 0px 0px 25px rgba(24, 255, 172, 0.5);
+			border-radius: 30px;
+			color: #fff;
+			overflow: hidden;
+			cursor: pointer;
+			&::after {
+				position: absolute;
+				content: '';
+				top: 0;
+				left: 0;
+				width: 80px;
+				height: 100%;
+				background: linear-gradient(90deg, transparent, #fff, transparent);
+				transform: translate(-120%) skewX(-45deg);
+			}
+			@media (min-width: 992px) {
+				&:hover {
+					&::after {
+						animation: move-light 0.8s;
+					}
+				}
+			}
+			@keyframes move-light {
+				from {
+					transform: translate(-100%) skewX(-45deg);
+				}
+				to {
+					transform: translate(500px) skewX(-45deg);
+				}
+			}
+			@media (max-width: 760px) {
+				font-size: 16px;
+				line-height: 20px;
+				padding: 18px 125px 17px 125px;
+			}
+			@media (max-width: 560px) {
+				font-size: 14px;
+				line-height: 17px;
+				padding: 12px 50px 11px 50px;
+				margin: 10px 0 25px;
+			}
+		}
+		.enter-btn {
+			padding: 24px 204px 23px;
+			background: linear-gradient(90.92deg, #ffa318 7.63%, #b518ff 91.29%);
+			box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.5);
+			@media (max-width: 760px) {
+				font-size: 16px;
+				line-height: 20px;
+				padding: 18px 125px 17px 125px;
+			}
+			@media (max-width: 560px) {
+				font-size: 14px;
+				line-height: 17px;
+				padding: 12px 100px 11px 100px;
+				margin: 10px 0 25px;
+			}
+		}
+		@media (max-width: 760px) {
+			width: auto;
+			padding: 35px 30px 40px;
+		}
+		@media (max-width: 560px) {
+			width: auto;
+			padding: 35px 15px;
+		}
+	}
+}
+//============================================

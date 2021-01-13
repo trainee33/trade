@@ -1,0 +1,215 @@
+.course {
+	text-align: center;
+	color: #212121;
+	margin-bottom: 140px;
+	@media (max-width: 560px) {
+		margin-bottom: 80px;
+	}
+	// .course__title
+	&__title {
+		margin-bottom: 50px;
+		@media (max-width: 560px) {
+			margin-bottom: 30px;
+		}
+	}
+
+	// .course__text
+	&__text {
+		margin: 0 -10px 50px;
+		@media (max-width: 560px) {
+			margin: 0 0 30px;
+		}
+	}
+
+	// .course__body
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0 -10px;
+		overflow-x: hidden;
+	}
+
+	// .course__item
+	&__item {
+		text-align: left;
+		&:nth-child(odd) {
+			transform: translate(-200%, 0);
+			opacity: 0;
+		}
+		&:nth-child(even) {
+			transform: translate(200%, 0);
+			opacity: 0;
+		}
+		&:nth-child(1)._active {
+			transform: translate(0, 0);
+			opacity: 1;
+			transition: all 0.8s ease 0s;
+		}
+		&:nth-child(2)._active {
+			transform: translate(0, 0);
+			opacity: 1;
+			transition: all 0.8s ease 0s;
+		}
+		&:nth-child(3)._active {
+			transform: translate(0, 0);
+			opacity: 1;
+			transition: all 0.8s ease 0.2s;
+		}
+		&:nth-child(4)._active {
+			transform: translate(0, 0);
+			opacity: 1;
+			transition: all 0.8s ease 0.2s;
+		}
+		&:nth-child(5)._active {
+			transform: translate(0, 0);
+			opacity: 1;
+			transition: all 0.8s ease 0.4s;
+		}
+		&:nth-child(6)._active {
+			transform: translate(0, 0);
+			opacity: 1;
+			transition: all 0.8s ease 0.4s;
+		}
+	}
+
+	.item-course {
+		color: #fff;
+		background-color: #1c1261;
+		flex: 0 1 570px;
+		max-width: 570px;
+		padding: 15px 25px 19px 25px;
+		margin: 0 10px 20px;
+		@media (max-width: 560px) {
+			padding: 15px 10px;
+		}
+		// .item-course__title
+		&__title {
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 22px;
+			margin-bottom: 18px;
+			span {
+				text-transform: uppercase;
+			}
+		}
+
+		// .item-course__info
+		&__info {
+			margin-bottom: 35px;
+		}
+
+		// .item-course__text
+		&__text {
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 17px;
+			margin-bottom: 35px;
+			@media (max-width: 560px) {
+				line-height: 15px;
+				font-size: 12px;
+			}
+		}
+		&__img {
+			flex: 0 1 570px;
+			padding: 0 0 53%;
+			@media (max-width: 1250px) {
+				display: none;
+			}
+		}
+		&__two {
+			background-color: #b518ff;
+		}
+		&__three {
+			background-color: #0f96e2;
+		}
+	}
+	.course-info {
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 17px;
+		&__item {
+			display: flex;
+			align-items: center;
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 17px;
+			margin-bottom: 12px;
+			p {
+				margin-right: 18px;
+			}
+			&--bottom {
+				margin-bottom: 10px;
+				p {
+					font-size: 12px;
+					line-height: 17px;
+					@media (max-width: 560px) {
+						line-height: 15px;
+					}
+				}
+			}
+		}
+		&__bottom {
+			margin-bottom: 40px;
+		}
+		.course-svg {
+			width: 30px;
+			height: 30px;
+			margin-right: 15px;
+			svg {
+				width: 30px;
+				height: 30px;
+			}
+		}
+	}
+
+	.btn {
+		position: relative;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 1px;
+		padding: 20px 83px 18px 83px;
+		background: linear-gradient(92.01deg, #18ffac 19.16%, #18acff 82.18%);
+		box-shadow: 0px 0px 25px rgba(24, 255, 172, 0.5);
+		border-radius: 30px;
+		overflow: hidden;
+		&::after {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width: 80px;
+			height: 100%;
+			background: linear-gradient(90deg, transparent, #fff, transparent);
+			transform: translate(-100%) skewX(-45deg);
+		}
+		@media (min-width: 992px) {
+			&:hover {
+				&::after {
+					animation: move-light 1.2s;
+				}
+			}
+		}
+		&__two {
+			background: linear-gradient(90.92deg, #189eff 7.63%, #ff185d 91.29%);
+			box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.5);
+		}
+		&__three {
+			background: linear-gradient(90.92deg, #ffa318 7.63%, #b518ff 91.29%);
+			box-shadow: 0px 0px 25px rgba(255, 163, 24, 0.5);
+		}
+		@keyframes move-light {
+			from {
+				transform: translate(-100%) skewX(-45deg);
+			}
+			to {
+				transform: translate(300px) skewX(-45deg);
+			}
+		}
+		@media (max-width: 560px) {
+			padding: 12px 55px;
+			margin: 0 auto;
+		}
+	}
+}
