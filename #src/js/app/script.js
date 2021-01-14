@@ -73,7 +73,7 @@ if(animItems.length > 0){
 				const animItem = animItems[i];
 				const animItemHeight = animItem.offsetHeight; //высота элемента
 				const animItemOffset = offset(animItem).top; // позиция элемента от верха
-				const animStart = 4; //старт анимации
+				const animStart = 5; //старт анимации
 
 				let animItemPoint = window.innerHeight - animItemHeight / animStart;
 				if (animItemHeight > window.innerHeight) {
